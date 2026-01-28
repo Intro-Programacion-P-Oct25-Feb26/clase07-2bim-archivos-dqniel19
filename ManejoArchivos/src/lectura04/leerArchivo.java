@@ -24,6 +24,7 @@ public class leerArchivo {
         double a = 0;
         double b;
         double c = 0;
+        int i = 0;
         try {
 
             Scanner entrada = new Scanner(new File("data/datosDos.txt"));
@@ -32,16 +33,17 @@ public class leerArchivo {
                 List<String> lista = Arrays.asList(linea.split("\\|"));
                 ArrayList<String> linea_partes = new ArrayList<>(lista);
                 a = a + Double.parseDouble(linea_partes.get(3));
+                i = i + 1;
                 // b = Double.parseDouble(linea_partes.get(3));
-                c = a / 2;
             }
+            c = a / i;
             entrada.close();
         } catch (Exception e) {
             System.err.println("Error al leer del archivo.");
             System.exit(1);
         }
         
-        System.out.printf("Promedio: %.2f", c);
+        System.out.printf("Promedio: %.2f\n", c);
     }
 
 }
