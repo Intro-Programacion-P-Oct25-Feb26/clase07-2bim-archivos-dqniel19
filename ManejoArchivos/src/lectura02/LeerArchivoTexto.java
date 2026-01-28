@@ -21,7 +21,9 @@ public class LeerArchivoTexto {
 
             while (entrada.hasNext()) {
                 String linea = entrada.nextLine();
-                List<String> lista = Arrays.asList(linea.split("\\|"));
+                List<String> lista = Arrays.asList(linea.split("\\;"));
+                // Se utiliza "//|" debido a que el simbolo de separacion en el documento 
+                // de datos es diferente a . y ;
                 ArrayList<String> linea_partes = new ArrayList<>(lista);
                 
                 
